@@ -2,13 +2,12 @@ import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles({
   media: {
-    height: 0,
+    height: '30%',
     paddingTop: '56.25%',
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
     backgroundBlendMode: 'darken',
     borderRadius: '50%',
-    border:'1px solid black',
-    width:'60%',
+    width:'70%',
 display:'flex',
 alignSelf:'center'
   },
@@ -26,7 +25,7 @@ alignSelf:'center'
     flexDirection: 'column',
     justifyContent: 'space-between',
     borderRadius: '5px',
-    height: '120%',
+    height: '400px',
     position: 'relative',
     marginBottom:'40px',
 
@@ -56,7 +55,7 @@ alignSelf:'center'
    width:"100%",
   textTransform:'capitalize',
   margin:'20px 20px',
-  textAlign:'center'
+  textAlign: 'start'
   },
   cardActions: {
     padding: '0 16px 8px 16px',
