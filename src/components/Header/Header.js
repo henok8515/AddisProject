@@ -192,7 +192,7 @@ history.push(route)
           >
             M
           </Typography>
-          <Search style={{display:'flex',  alignItems:'center', marginLeft:'200px', width:'300px', height:'50px', }}>
+          <Search >
             <SearchIconWrapper>
               <SearchIcon />
             </SearchIconWrapper>
