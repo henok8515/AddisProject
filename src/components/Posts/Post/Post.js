@@ -35,8 +35,8 @@ const Post = ({ post, setCurrentId, currentId }) => {
    
     
   }}>
- <Typography style={{textTransform:"capitalize", textDecoration:'underline'}} variant="h4">{post.creator}</Typography>
- <Typography  variant="h6" color="textSecondary" component="p">{post.message + '@gmail.com'}</Typography>
+ <Typography style={{textTransform:"capitalize"}} variant="h4">{post.creator}</Typography>
+ <Typography  variant="h6" color="textSecondary" component="p">{post.message }</Typography>
     <Typography gutterBottom variant="h6" component="h2">{post.title}</Typography>
     <Typography  variant="h6" color="textSecondary" component="h2">{post.tags.map((tag) => `$${tag} `)}</Typography>
   </CardContent>
