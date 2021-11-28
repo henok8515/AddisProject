@@ -16,8 +16,9 @@ import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import LogoutIcon from '@mui/icons-material/Logout';
-
 import { useHistory } from 'react-router';
+
+
 const Search = styled( 'div' )( ( {theme} ) => ( {
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
@@ -58,10 +59,13 @@ const StyledInputBase = styled( InputBase )( ( {theme} ) => ( {
     },
   },
 } ) );
-const Header = () => {
+
+
+
+
+const Header = ({ input ,setInput}) => {
   const [anchorEl, setAnchorEl] = React.useState( null );
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState( null );
-
   const isMenuOpen = Boolean( anchorEl );
   const isMobileMenuOpen = Boolean( mobileMoreAnchorEl );
 
@@ -81,6 +85,10 @@ const Header = () => {
   const handleMobileMenuOpen = ( event ) => {
     setMobileMoreAnchorEl( event.currentTarget );
   };
+  const handleInput =(e) =>{
+    setInput(e.target.value)
+    console.log(e.target.value)
+  }
 const history =useHistory()
 const handleHistory=(route)=>{
 history.push(route)
@@ -159,6 +167,7 @@ history.push(route)
       </MenuItem>
     </Menu>
   );
+  
 
   return (
     <Box sx={{flexGrow: 1}}>
@@ -183,13 +192,15 @@ history.push(route)
           >
             M
           </Typography>
-          <Search>
+          <Search style={{display:'flex',  alignItems:'center', marginLeft:'200px', width:'300px', height:'50px', }}>
             <SearchIconWrapper>
               <SearchIcon />
             </SearchIconWrapper>
             <StyledInputBase
               placeholder="Search…"
               inputProps={{'aria-label': 'search'}}
+              onChange={handleInput}
+            
             />
           </Search>
           <Box sx={{flexGrow: 1}} />
@@ -203,7 +214,7 @@ history.push(route)
               <Link to='/signin' style={{
                 color:"inherit"
               }}>
-       <LogoutIcon />
+       {/* <LogoutIcon /> */}
        </Link>
             </IconButton>
             <IconButton
@@ -215,7 +226,7 @@ history.push(route)
               onClick={handleProfileMenuOpen}
               color="inherit"
             >
-              <AccountCircle />
+              {/* <AccountCircle /> */}
             </IconButton>
           </Box>
           <Box sx={{display: {xs: 'flex', md: 'none'}}}>

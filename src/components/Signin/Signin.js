@@ -48,9 +48,9 @@ export default function SignInSide() {
   }
   return (
     <ThemeProvider theme={theme}>
-      <Grid container component="main" sx={{  marginBottom:'100px', marginTop:'50px', height: '60vh'}}>
+      <Grid container component="main" sx={{ display:'flex', justifyContent:'center' , marginBottom:'100px', marginTop:'50px', height: '60vh'}}>
         <CssBaseline />
-        <Grid
+        {/* <Grid
           item
           xs={false}
           sm={4}
@@ -63,7 +63,7 @@ export default function SignInSide() {
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
-        />
+        /> */}
         <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
           <Box
             sx={{
