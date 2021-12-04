@@ -2,9 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { TextField, Button, Typography, Paper } from '@material-ui/core';
 import { useDispatch, useSelector } from 'react-redux';
 import FileBase from 'react-file-base64';
-
 import useStyles from './styles';
-import { createPost, updatePost } from '../../actions/posts';
+import { CREATE, UPDATE } from '../../constants/actionTypes';
+
+
+
 
 const Form = ({ currentId, setCurrentId }) => {
   const [postData, setPostData] = useState({ creator: '', title: '', message: '', tags: '', selectedFile: '' , email:'' });
@@ -29,14 +31,15 @@ const Form = ({ currentId, setCurrentId }) => {
 
    
     if (currentId === 0) {
-      dispatch(createPost(postData));
-
+      dispatch({type:CREATE , payload: postData});
+   
       clear();
     } else {
-      dispatch(updatePost(currentId, postData));
+      dispatch({type:UPDATE , payload: postData(currentId)});
       clear();
     }
   };
+  
   const formRef = React.useRef();
   return (
     <Paper className={classes.paper}>

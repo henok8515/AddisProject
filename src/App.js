@@ -22,6 +22,7 @@ const App = () => {
   }, [currentId, dispatch]);
   
   const posts = useSelector((state) => state.posts);
+  console.log(posts, 'this is post')
 
   return (
    <Router>

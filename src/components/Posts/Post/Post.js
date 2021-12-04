@@ -4,13 +4,13 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import { useDispatch } from 'react-redux';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
-import {  deletePost } from '../../../actions/posts';
-import useStyles from './styles';
+
+// import useStyles from './styles';
 import EditIcon from '@mui/icons-material/Edit';
+import { DELETE } from '../../../constants/actionTypes';
 const Post = ({ post, setCurrentId, currentId }) => {
   const dispatch = useDispatch();
   return (
-
     <Card  sx={{ maxWidth: 345,  }}>
     <div
      style={{
@@ -41,7 +41,7 @@ const Post = ({ post, setCurrentId, currentId }) => {
     <Typography  variant="h6" color="textSecondary" component="h2">{post.tags.map((tag) => `$${tag} `)}</Typography>
   </CardContent>
   <CardActions style={{display:'flex', justifyContent:'space-between'}}>{
-!currentId ? <Button style={{ color: 'blue'  }} size="medium" color="secondary" onClick={() => dispatch(deletePost(post._id))}><DeleteIcon fontSize="small" /></Button>:<h1>nottt</h1>
+!currentId ? <Button style={{ color: 'blue'  }} size="medium" color="secondary" onClick={() => dispatch({ type:DELETE , payload:post._id})}><DeleteIcon fontSize="small" /></Button>:<h1>nottt</h1>
   }
  
   <Button style={{ color: 'blue' }} size="small" onClick={() => setCurrentId(post._id)}><EditIcon fontSize="default" /></Button>
